@@ -19,7 +19,9 @@ function FileViewer({job}) {
         <div className="fileViewer">
             <div className="fileViewerHeader">
                 <h3>{job != null ? job.fileLocation.split("\\").pop() : ""}</h3>
-
+                <div className="pageSelector">
+                    
+                </div>
             </div>
         </div>
     );
