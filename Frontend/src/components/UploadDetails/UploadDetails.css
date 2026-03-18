@@ -1,0 +1,73 @@
+.details {
+    border: 0.01rem solid black;
+    border-radius: 2rem;
+    margin: 0 0 0 2rem;
+    height: 70vh;
+    width: 20vw;
+    background-color:rgb(243, 243, 236);
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.headerDetails {
+    display: flex;
+    justify-content: center;
+
+}
+
+.nameDetails {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.listDetails {
+    list-style: none;
+}
+
+.listItemDetails {
+    margin: 2rem 1rem;
+}
+
+.buttonDetails {
+    
+    background-color:rgb(149, 210, 248);
+    border-radius: 0.75rem;
+    height: 2rem;
+    border: none;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonDetails:hover {
+    box-shadow: 0 0.1rem rgb(160, 146, 146);
+    transform: translateY(-2px);
+}
+
+.deleteButtonDetails {
+     background-color:rgb(229, 78, 51);
+    border-radius: 0.75rem;
+    height: 2rem;
+    border: none;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.deleteButtonDetails:hover {
+    box-shadow: 0 0.1rem rgb(160, 146, 146);
+    transform: translateY(-2px);
+}
+
+.popupDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.popupButtonDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}

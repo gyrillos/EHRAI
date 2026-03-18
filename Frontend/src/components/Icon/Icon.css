@@ -1,0 +1,19 @@
+Body {
+    font-family: sans-serif;
+}
+
+
+.icon p {
+    margin: 0;
+    margin-left: 1;
+}
+
+.icon {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+.icon:hover {
+    background-color: #bdbdbd;
+}

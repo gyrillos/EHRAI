@@ -1,0 +1,16 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.body {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+}

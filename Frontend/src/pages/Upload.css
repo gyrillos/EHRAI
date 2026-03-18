@@ -1,0 +1,14 @@
+.layoutUpload {
+    display: flex;
+    flex-direction: column;
+}
+
+.layoutUploadSidebar {
+    display: flex;
+    flex-direction: row;
+}
+
+.everything {
+    display: flex;
+    flex-direction: row;
+}

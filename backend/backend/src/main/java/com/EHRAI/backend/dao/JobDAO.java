@@ -1,10 +1,10 @@
-package com.EHRAI.backend.service;
+package com.EHRAI.backend.dao;
 
 import java.util.List;
 
 import com.EHRAI.backend.entity.Job;
 
-public interface JobService {
+public interface JobDAO {
 	List<Job> findAll();
 	Job findById(int id);
 	Job save(Job job);

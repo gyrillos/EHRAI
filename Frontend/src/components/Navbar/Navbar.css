@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+}
+
+.navbar {
+    border-right: .0025rem solid rgb(117, 117, 117);
+    background-color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 6rem;
+    padding-top: 5rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar a.active {
+    background-color: #95d2f8;
+    color: blue;
+}
+
