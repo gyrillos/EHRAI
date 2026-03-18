@@ -26,7 +26,7 @@ function UploadDetails({job, loadJobs}) {
         await fetch("http://localhost:8080/api/converttopng/"+jobID, {
             method: "POST"
         });
-        navigate("/review")
+        navigate("/review", {state: {job}})
     }
 
 

@@ -38,3 +38,18 @@ ipcMain.handle("delete-file", async (_event, filePath) => {
     return { success: false, error: error.message };
   }
 });
+
+ipcMain.handle("count-pages", async (_event, folderPath) => {
+  try {
+    const files = await fs.readdir(folderPath);
+
+    const pageFiles = files.filter((file) => {
+      const ext = path.extname(file).toLowerCase();
+      return [".png", ".jpg", ".jpeg", ".tif", ".tiff"].includes(ext);
+    });
+
+    return { success: true, count: pageFiles.length };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+});
