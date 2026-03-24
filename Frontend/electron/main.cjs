@@ -50,6 +50,32 @@ ipcMain.handle("count-pages", async (_event, folderPath) => {
 
     return { success: true, count: pageFiles.length };
   } catch (error) {
+    return { success: false, error: error.message, count: 0 };
+  }
+});
+
+ipcMain.handle("get-preview-path", async (_event, folderPath, pageIndex) => {
+  try {
+    const files = await fs.readdir(folderPath);
+
+    const pageFiles = files
+      .filter((file) => {
+        const ext = path.extname(file).toLowerCase();
+        return [".png", ".jpg", ".jpeg", ".tif", ".tiff"].includes(ext);
+      })
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+
+    if (pageIndex < 0 || pageIndex >= pageFiles.length) {
+      return { success: false, error: "Page index out of bounds" };
+    }
+
+    const fullPath = path.join(folderPath, pageFiles[pageIndex]);
+
+    return {
+      success: true,
+      path: `file:///${fullPath.replace(/\\/g, "/")}`
+    };
+  } catch (error) {
     return { success: false, error: error.message };
   }
 });

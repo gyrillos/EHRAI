@@ -1,5 +1,5 @@
 .fileViewer {
-    border: 0.05rem solid rgb(211, 211, 211);
+    border: 0.05rem solid rgb(130, 129, 129);
     border-radius: 1rem;
     width: 40rem;
     height: 40rem;
@@ -13,7 +13,25 @@
     border-top-right-radius: 1rem;
     height: 3rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0.5rem;
     justify-content: space-between;
+    user-select: none;
+}
+
+.fileViewerFooter {
+    background-color: rgb(211, 211, 211);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.fileViewerPage {
+    width: 40rem;
+    height: 32rem;
 }
