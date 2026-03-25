@@ -5,5 +5,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
   deleteFile: (filePath) => ipcRenderer.invoke("delete-file", filePath),
   countPages: (folderPath) => ipcRenderer.invoke("count-pages", folderPath),
   getPreviewPath: (folderPath, pageIndex) =>
-    ipcRenderer.invoke("get-preview-path", folderPath, pageIndex),
+    ipcRenderer.invoke("get-preview-image", folderPath, pageIndex),
 });

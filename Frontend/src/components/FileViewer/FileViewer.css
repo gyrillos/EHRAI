@@ -27,11 +27,26 @@
     display: flex;
     flex-direction: row;
     padding: 0.5rem;
-    justify-content: space-between;
+    justify-content: center;
     user-select: none;
 }
 
 .fileViewerPage {
-    width: 40rem;
-    height: 32rem;
+    width: 38rem;
+    height: 30rem;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 1rem;
+    background-color: rgb(243, 243, 236);
+}
+
+.previewImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    transform-origin: top left;
 }

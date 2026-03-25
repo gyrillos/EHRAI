@@ -1,0 +1,36 @@
+.reviewDetailsLayout {
+    display: flex;
+    flex-direction: column;
+    height: 40rem;
+    width: 30rem;
+    border: 0.01rem solid black;
+    border-radius: 2rem;
+    background-color: rgb(243, 243, 236);
+
+}
+
+.reviewDetailsHeading {
+    display: flex;
+    justify-content: center;
+}
+
+.reviewDetailsSubmitButton {
+    background-color:rgb(149, 210, 248);
+    border-radius: 1rem;
+    width: 6rem;
+    height: 4rem;
+    border: none;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reviewDetailsNames {
+
+}
+
+.reviewDetailsSubmitButton:hover {
+    box-shadow: 0 0.1rem rgb(160, 146, 146);
+    transform: translateY(-2px);
+}
+

@@ -23,7 +23,7 @@ ipcMain.handle("select-file", async () => {
   const result = await dialog.showOpenDialog({
     properties: ["openFile", "multiSelections"],
     filters: [
-      { name: "Documents", extensions: ["pdf", "png", "jpg", "tiff"] }
+      { name: "Documents", extensions: ["pdf", "png", "jpg", "tiff", "tif"] }
     ]
   });
 
@@ -54,14 +54,14 @@ ipcMain.handle("count-pages", async (_event, folderPath) => {
   }
 });
 
-ipcMain.handle("get-preview-path", async (_event, folderPath, pageIndex) => {
+ipcMain.handle("get-preview-image", async (_event, folderPath, pageIndex) => {
   try {
     const files = await fs.readdir(folderPath);
 
     const pageFiles = files
       .filter((file) => {
         const ext = path.extname(file).toLowerCase();
-        return [".png", ".jpg", ".jpeg", ".tif", ".tiff"].includes(ext);
+        return [".png", ".jpg", ".jpeg"].includes(ext);
       })
       .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 
@@ -70,10 +70,18 @@ ipcMain.handle("get-preview-path", async (_event, folderPath, pageIndex) => {
     }
 
     const fullPath = path.join(folderPath, pageFiles[pageIndex]);
+    const ext = path.extname(fullPath).toLowerCase();
+
+    let mimeType = "image/png";
+    if (ext === ".jpg" || ext === ".jpeg") mimeType = "image/jpeg";
+
+    const fileBuffer = await fs.readFile(fullPath);
+    const base64 = fileBuffer.toString("base64");
 
     return {
       success: true,
-      path: `file:///${fullPath.replace(/\\/g, "/")}`
+      src: `data:${mimeType};base64,${base64}`,
+      fileName: pageFiles[pageIndex]
     };
   } catch (error) {
     return { success: false, error: error.message };
