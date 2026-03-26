@@ -11,11 +11,11 @@ function Navbar() {
                 <Icon item={ClipboardList} name="Upload"></Icon>
             </NavLink>
 
-            <NavLink to="/review">
+            <NavLink to="/review" className="disabled">
                 <Icon item={Search} name="Review"></Icon>
             </NavLink>
 
-            <NavLink to="/confirm">
+            <NavLink to="/confirm" className="disabled">
                 <Icon item={CheckCircle2} name="Confirm"></Icon>
             </NavLink>
         </div>

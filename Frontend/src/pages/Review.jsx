@@ -17,7 +17,7 @@ function Review() {
         <div className="everythingReview">
             <div className="reviewLayout">
                 <FileViewer job={job}></FileViewer>
-                <ReviewDetails job={job}></ReviewDetails>
+                <ReviewDetails job={job} isReview={true}></ReviewDetails>
             </div>
         </div>
     );

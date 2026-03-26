@@ -26,7 +26,23 @@
 }
 
 .reviewDetailsNames {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
 
+.reviewDetailsDates {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.reviewDetailsDocs {
+    gap: .5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .reviewDetailsSubmitButton:hover {
@@ -34,3 +50,17 @@
     transform: translateY(-2px);
 }
 
+.reviewDetailsForm {
+    padding: 1.5rem;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.disabled::placeholder {
+  font-style: normal;
+  color: black;        
+  opacity: 1;          
+  font-weight: 400;
+}
