@@ -29,6 +29,14 @@ function UploadDetails({job, loadJobs}) {
         navigate("/review", {state: {job}})
     }
 
+    async function attachRedirect() {
+        const jobID = job.id;
+        await fetch("http://localhost:8080/api/converttopng/"+jobID, {
+            method: "POST"
+        });
+        navigate("/confirm", {state: {job}});
+    }
+
 
     return (
         <div className="details">
@@ -39,7 +47,7 @@ function UploadDetails({job, loadJobs}) {
                 <ul className="listDetails">
                     <li className="listItemDetails"><b>File Location: </b>{job.fileLocation}</li>
                     <li className="listItemDetails">{job.isProcessed == true ? <CheckSquare/> : <Square/>} Processed {job.isProcessed == true ? "" : <button className="buttonDetails" onClick={ReviewRedirect}>Use AI</button>}</li>
-                    <li className="listItemDetails">{job.isConfirmed == true ? <CheckSquare/> : <Square/>} Attached {job.isConfirmed == false && job.isProcessed == true ? <button className="buttonDetails">Attach File</button> : ""}</li>
+                    <li className="listItemDetails">{job.isConfirmed == true ? <CheckSquare/> : <Square/>} Attached {job.isConfirmed == false && job.isProcessed == true ? <button className="buttonDetails" onClick={attachRedirect}>Attach File</button> : ""}</li>
                     <li className="listItemDetails" onClick={() => SetShowPopup(true)}><button className="deleteButtonDetails">Delete File</button></li>
                     {showPopup ? <li className="listItemDetails"><div className="popupDetails"><h5>Delete this file from users local machine?</h5><div className="popupButtonDetails"><button className="buttonDetails" onClick={() => SetShowPopup(false)}>Cancel</button><button className="deleteButtonDetails" onClick={() => deleteButton()}>Delete</button></div></div></li> : ""}
                 </ul>   

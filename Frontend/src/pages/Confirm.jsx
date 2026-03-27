@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import FileViewer from "../components/FileViewer/FileViewer";
 import ReviewDetails from "../components/ReviewDetails/ReviewDetails";
+import AttachButton from "../components/AttachButton/AttachButton";
 import "./Review.css";
 
 function Confirm() {
@@ -19,6 +20,7 @@ function Confirm() {
                 <FileViewer job={job}></FileViewer>
                 <ReviewDetails job={job} isReview={false}></ReviewDetails>
             </div>
+            <AttachButton></AttachButton>
         </div>
     );
 }

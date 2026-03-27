@@ -21,11 +21,19 @@ function ReviewDetails({job, isReview}) {
                 setNewJob(data);
                 setDob(data.dob || "");
                 setDateOfService(data.dateOfService || "");
+                setDocName(data.docName || "");
+                setDocType(data.docType || "");
+                setFirstName(data.firstName || "");
+                setLastName(data.lastName || "");
             }
             loadDetails();
             } else {
                 setDob(job.dob || "");
                 setDateOfService(job.dateOfService || "");
+                setDocName(job.docName || "");
+                setDocType(job.docType || "");
+                setFirstName(job.firstName || "");
+                setLastName(job.lastName || "");
                 setNewJob(job);
             }
     }, []);

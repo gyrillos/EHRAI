@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import { useLocation } from "react-router-dom";
 import FileViewer from "../components/FileViewer/FileViewer";
 import ReviewDetails from "../components/ReviewDetails/ReviewDetails";
+import ScanButton from "../components/ScanButton/ScanButton";
 import "./Review.css";
 
 function Review() {
@@ -19,6 +20,7 @@ function Review() {
                 <FileViewer job={job}></FileViewer>
                 <ReviewDetails job={job} isReview={true}></ReviewDetails>
             </div>
+            <ScanButton></ScanButton>
         </div>
     );
 }

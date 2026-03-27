@@ -1,0 +1,19 @@
+.attachButton {
+    background-color:rgb(149, 210, 248);
+    border-radius: 1rem;
+    width: 6rem;
+    height: 4rem;
+    border: none;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.attachButton:hover {
+    box-shadow: 0 0.1rem rgb(160, 146, 146);
+    transform: translateY(-2px);
+}
+
+.attachButtonArea {
+    padding: 1rem;
+}
