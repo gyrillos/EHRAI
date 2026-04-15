@@ -3,7 +3,14 @@ import "./ScanButton.css";
 function ScanButton() {
 
     function scanDocument() {
-        console.log("sending to allscripts");
+        fetch("http://localhost:8080/api/useAI", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        }})
+        .then(res => res.json())
+        .then(data => setData(data))
+        .catch(err => console.error(err));
     }
 
     return(
